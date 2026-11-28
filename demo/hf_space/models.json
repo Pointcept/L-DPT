@@ -1,0 +1,23 @@
+{
+  "_note": "Release files written by `python -m ldpt.models.l_dpt.convert` from the training checkpoints of configs/hybrid/ (docs/training.md), pinned to a commit of the model repo. The default is the first recommended entry; with one entry the UI shows no model choice. LDPT_CKPT_<NAME> (the id without 'l-dpt_', upper-cased, '-' -> '_': LDPT_CKPT_LARGE_DEPTH_ZEROSHOT, the variable of the API) replaces a source by a local release file. 'expect' pins release-config values checked before loading; 'sha256' is checked after a download.",
+  "models": [
+    {
+      "id": "l-dpt_large_depth_zeroshot",
+      "label": "L-DPT Large (zero-shot)",
+      "description": "L-DPT Large (zero-shot): trained on 8 synthetic and multi-view sets only, with no image of the NYUv2, KITTI, DIODE or ETH3D benchmarks. The model for photos, and the model of the demo examples and of the README figures.",
+      "recommended": true,
+      "source": {
+        "repo": "pointcept-bot/L-DPT",
+        "filename": "l-dpt_large_depth_zeroshot.pth",
+        "revision": "0b212646e6bf7f2e0007c98ba5ed902408bfc27c",
+        "sha256": "b4e7e95301fda7557760f787e7992f4ccca3c03cb70e46eadeb48e227b1b31ca"
+      },
+      "expect": {
+        "head": "exp",
+        "dec_qk_norm": false,
+        "attn_fp32": "last_stage",
+        "dec_qk_bound": 1000
+      }
+    }
+  ]
+}

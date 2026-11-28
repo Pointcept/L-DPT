@@ -1,0 +1,10 @@
+# L-DPT Space, python 3.10. gradio comes from sdk_version in README.md (5.49.1) and
+# `spaces` is preinstalled on ZeroGPU (app.py also runs without it); the ldpt package is
+# copied in by sync_ldpt.sh.
+torch==2.8.0
+numpy==2.2.6
+opencv-python-headless==4.12.0.88
+matplotlib==3.10.8
+pillow>=10
+safetensors==0.7.0
+huggingface_hub==1.2.3

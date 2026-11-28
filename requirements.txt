@@ -1,0 +1,24 @@
+# Training environment (CUDA 12.8 wheels of torch 2.8.0); the same set as
+# `pip install -e .[train]` plus the pinned torch build.
+--index-url https://download.pytorch.org/whl/cu128
+--extra-index-url https://pypi.org/simple
+
+torch==2.8.0
+torchvision==0.23.0
+
+numpy
+huggingface_hub
+safetensors
+opencv-python
+h5py
+OpenEXR
+imath
+addict
+yapf
+tensorboard
+tensorboardx
+termcolor
+wandb
+matplotlib
+pillow
+tqdm

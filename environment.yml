@@ -1,0 +1,17 @@
+name: l-dpt
+channels:
+  - nvidia/label/cuda-12.8.1
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - cuda
+  - conda-forge::cudnn
+  - gcc=13.2
+  - gxx=13.2
+
+variables:
+  TORCH_CUDA_ARCH_LIST: "8.0;8.6;8.9;9.0"
+  PIP_NO_BUILD_ISOLATION: 1

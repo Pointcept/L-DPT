@@ -1,0 +1,5 @@
+# Generated for the Space (sync_ldpt.sh, make_examples.py), not committed to this repo.
+# The Space needs both: upload this folder without this file (see sync_ldpt.sh).
+ldpt/
+examples/
+__pycache__/

@@ -1,0 +1,4 @@
+# optional
+transformers  # scripts/datasets/deduplicate.py (rebuilding the *_dino_95.json splits)
+pytest  # the CPU test suite
+black  # code style

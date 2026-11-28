@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "l-dpt"
+version = "0.1.0"
+description = "L-DPT: dense prediction (relative depth, semantic segmentation) from a frozen DINOv3 encoder with a latent DPT decoder; trained at 768, runs at 100 megapixels."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-NC-4.0" }
+authors = [{ name = "Xiaoyang Wu", email = "xiaoyang.wu.cs@gmail.com" }]
+keywords = ["depth estimation", "semantic segmentation", "dense prediction", "dinov3", "dpt"]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# inference (ldpt.models.l_dpt.api: load / predict): torch, numpy, huggingface_hub for
+# the weight download and safetensors for DINOv3 in the Hugging Face (transformers)
+# format; tested with torch 2.8.0 (CUDA 12.8 wheels on x86_64, CUDA 12.9 wheels on
+# aarch64)
+dependencies = [
+  "torch>=2.8",
+  "numpy>=1.24",
+  "huggingface_hub>=0.25",
+  "safetensors>=0.4",
+]
+
+[project.optional-dependencies]
+# training and evaluation (train.py, train.sh, scripts/evaluate.py)
+train = [
+  "torchvision>=0.23",
+  "opencv-python>=4.8",
+  "h5py",
+  "OpenEXR",
+  "Imath",
+  "addict",
+  "yapf",
+  "tensorboard",
+  "tensorboardX",
+  "termcolor",
+  "wandb",
+  "matplotlib",
+  "pillow",
+  "tqdm",
+]
+# inference scripts (scripts/demo_depth.py, scripts/highres_infer.py): image files,
+# depth colours
+demo = [
+  "opencv-python>=4.8",
+  "matplotlib",
+]
+# the Gradio demo (demo/hf_space/app.py; with demo): the online demo's version
+# (sdk_version in demo/hf_space/README.md); app.py also runs on Gradio 6
+app = ["gradio==5.49.1"]
+# rebuilding the deduplicated training splits (scripts/datasets/deduplicate.py)
+data = ["transformers", "pillow", "tqdm"]
+dev = ["pytest>=8", "black"]
+
+[project.urls]
+Homepage = "https://xywu.me/l-dpt"
+Repository = "https://github.com/Pointcept/L-DPT"
+
+[tool.setuptools.packages.find]
+include = ["ldpt*"]

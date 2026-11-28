@@ -1,0 +1,71 @@
+# COCO-Stuff (train-id order) is defined with the inference code, which must not
+# import the datasets package
+from ldpt.utils.seg_image import COCOSTUFF_CLASS_NAMES  # noqa: F401
+
+HYPERSIM_CLASS_NAMES = [
+    "wall",
+    "floor",
+    "cabinet",
+    "bed",
+    "chair",
+    "sofa",
+    "table",
+    "door",
+    "window",
+    "bookshelf",
+    "picture",
+    "counter",
+    "blinds",
+    "desk",
+    "shelves",
+    "curtain",
+    "dresser",
+    "pillow",
+    "mirror",
+    "floormat",
+    "clothes",
+    "ceiling",
+    "books",
+    "refrigerator",
+    "television",
+    "paper",
+    "towel",
+    "shower curtain",
+    "box",
+    "whiteboard",
+    "person",
+    "nightstand",
+    "toilet",
+    "sink",
+    "lamp",
+    "bathtub",
+    "bag",
+    # "otherstructure",  # ignore other xxx
+    # "otherfurniture",  # ignore other xxx
+    # "otherprop",  # ignore other xxx
+]
+
+
+VOC2012_CLASS_NAMES = [
+    "background",
+    "aeroplane",
+    "bicycle",
+    "bird",
+    "boat",
+    "bottle",
+    "bus",
+    "car",
+    "cat",
+    "chair",
+    "cow",
+    "dining table",
+    "dog",
+    "horse",
+    "motorbike",
+    "person",
+    "potted plant",
+    "sheep",
+    "sofa",
+    "train",
+    "tv monitor",
+]
